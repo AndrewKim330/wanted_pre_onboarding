@@ -17,38 +17,77 @@ const allNotices = async (req, res) => {
 const addSingleNotice = async (req, res) => {
     console.log('post sequnece - add single notice');
     const noticeData = await req.body;
-    await Notice.create(noticeData);
-    const resMsg = {
-        data: null,
-        msg: 'Your notice is successfully added in the server',
-    };
-    res.status(200).send(resMsg);
+    let resObj;
+    const { company_id, hiring_position } = req.body;
+    const notExistCanAdd = await Notice.findOrCreate({
+        where: { company_id: company_id, hiring_position: hiring_position },
+        defaults: noticeData,
+    });
+    if (notExistCanAdd[1]) {
+        resObj = {
+            data: null,
+            msg: 'Your notice is successfully added in the server',
+            status: 200,
+        };
+    } else {
+        resObj = {
+            data: null,
+            msg: 'Same notice is already added',
+            status: 400,
+        };
+    }
+
+    res.status(resObj.status).send({ data: resObj.data, msg: resObj.msg });
 };
 
 const updateSingleNotice = async (req, res) => {
     console.log('patch sequnece - update single notice');
     const findCond = await req.query;
     const modification = await req.body;
+    let resObj;
     let targetNotice = await Notice.findOne({ where: findCond });
+    if (!targetNotice) {
+        resObj = {
+            data: null,
+            msg: 'Cannot specify a notice with your condition',
+            status: 400,
+        };
+        return res
+            .status(resObj.status)
+            .send({ data: resObj.data, msg: resObj.msg });
+    }
     await targetNotice.set(modification);
     await targetNotice.save();
-    const resMsg = {
+    resObj = {
         data: null,
         msg: 'Your notice is successfully modified',
+        status: 200,
     };
-    res.status(200).send(resMsg);
+    res.status(resObj.status).send({ data: resObj.data, msg: resObj.msg });
 };
 
 const deleteSingleNotice = async (req, res) => {
     console.log('delete sequnece - delete single notice');
     const findCond = await req.query;
+    let resObj;
     let targetNotice = await Notice.findOne({ where: findCond });
+    if (!targetNotice) {
+        resObj = {
+            data: null,
+            msg: 'Cannot specify a notice with your condition',
+            status: 400,
+        };
+        return res
+            .status(resObj.status)
+            .send({ data: resObj.data, msg: resObj.msg });
+    }
     await targetNotice.destroy();
-    const resMsg = {
+    resObj = {
         data: null,
         msg: 'Your notice is successfully deleted',
+        status: 200,
     };
-    res.status(200).send(resMsg);
+    res.status(resObj.status).send({ data: resObj.data, msg: resObj.msg });
 };
 
 module.exports = {
