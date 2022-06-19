@@ -10,7 +10,7 @@ const hiringRoute = express.Router();
 hiringRoute
     .route('/singleNotice')
     .post(addSingleNotice)
-    .put(updateSingleNotice)
+    .patch(updateSingleNotice)
     .delete(deleteSingleNotice);
 
 hiringRoute.route('/allNotices').get(allNotices);

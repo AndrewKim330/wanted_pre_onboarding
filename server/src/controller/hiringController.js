@@ -26,7 +26,7 @@ const addSingleNotice = async (req, res) => {
 };
 
 const updateSingleNotice = async (req, res) => {
-    console.log('put sequnece - update single notice');
+    console.log('patch sequnece - update single notice');
     const findCond = await req.query;
     const modification = await req.body;
     let targetNotice = await Notice.findOne({ where: findCond });
