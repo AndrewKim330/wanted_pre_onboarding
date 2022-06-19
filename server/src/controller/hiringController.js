@@ -40,7 +40,15 @@ const updateSingleNotice = async (req, res) => {
 };
 
 const deleteSingleNotice = async (req, res) => {
-    console.log('del sequnece - delete single notice');
+    console.log('delete sequnece - delete single notice');
+    const findCond = await req.query;
+    let targetNotice = await Notice.findOne({ where: findCond });
+    await targetNotice.destroy();
+    const resMsg = {
+        data: null,
+        msg: 'Your notice is successfully deleted',
+    };
+    res.status(200).send(resMsg);
 };
 
 module.exports = {
