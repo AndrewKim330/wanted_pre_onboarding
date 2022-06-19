@@ -4,7 +4,7 @@ const { sequelize } = require('../../db/models');
     await sequelize.sync();
 })();
 
-const searchFromDB = async (req, res) => {
+const searchFromNotices = async (req, res) => {
     const { search } = req.query;
     if (search.length < 2) {
         return res.status(400).send({
@@ -42,5 +42,5 @@ const searchFromDB = async (req, res) => {
 };
 
 module.exports = {
-    searchFromDB,
+    searchFromNotices,
 };
