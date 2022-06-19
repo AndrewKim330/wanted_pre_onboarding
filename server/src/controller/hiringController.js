@@ -1,3 +1,7 @@
+const allNotices = async () => {
+    console.log('get sequnece - view all notices');
+};
+
 const addSingleNotice = async () => {
     console.log('post sequnece - add single notice');
 };
@@ -10,12 +14,8 @@ const deleteSingleNotice = async () => {
     console.log('del sequnece - delete single notice');
 };
 
-const viewAllNotices = async () => {
-    console.log('get sequnece - view all notices');
-};
-
 module.exports = {
-    viewAllNotices,
+    allNotices,
     addSingleNotice,
     updateSingleNotice,
     deleteSingleNotice,

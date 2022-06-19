@@ -1,6 +1,6 @@
 const {
+    allNotices,
     addSingleNotice,
-    viewAllNotices,
     updateSingleNotice,
     deleteSingleNotice,
 } = require('../controller/hiringController.js');
@@ -10,7 +10,7 @@ const hiringRoute = express.Router();
 hiringRoute
     .route('/singleNotice')
     .post(addSingleNotice)
-    .get(viewAllNotices)
+    .get(allNotices)
     .put(updateSingleNotice)
     .delete(deleteSingleNotice);
 

@@ -8,3 +8,5 @@ app.use('/hiring', hiringRoute);
 app.listen(port, () => {
     console.log(`Listening on port ${port}...`);
 });
+
+module.exports = app;
