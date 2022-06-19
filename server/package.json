@@ -8,9 +8,9 @@
     },
     "scripts": {
         "start": "nodemon --watch ./ main",
-        "make-notice-modle": "npx sequelize-cli model:generate --name Notice --attributes company_id:string,hiring_position:string,hiring_incentive:number,hiring_detail:string,required_stack:string",
+        "make-notice-model": "npx sequelize-cli model:generate --name Notice --attributes company_id:string,hiring_position:string,hiring_incentive:integer,hiring_detail:string,required_stack:string",
         "make-user-modle": "npx sequelize-cli model:generate --name User --attributes user_name:string,gender:string,desired_position:string,user_mail:string,tech_stack:string,certificates:string,career:string",
-        "make-company-modle": "npx sequelize-cli model:generate --name Company --attributes company_name:string,country:string,state:string,company_mail:string",
+        "make-company-model": "npx sequelize-cli model:generate --name Company --attributes company_name:string,country:string,state:string,company_mail:string",
         "migrate": "npx sequelize-cli db:migrate",
         "test": "jest"
     },

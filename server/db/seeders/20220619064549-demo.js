@@ -13,8 +13,8 @@ module.exports = {
                     tech_stack: 'Javascript, Node.js',
                     certificates: '',
                     career: '',
-                    created_at: new Date(),
-                    updated_at: new Date(),
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
                 },
             ],
             {}
@@ -28,8 +28,8 @@ module.exports = {
                     country: 'Korea',
                     state: 'Pangyo',
                     company_mail: 'admin@backend_company.com',
-                    created_at: new Date(),
-                    updated_at: new Date(),
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
                 },
             ],
             {}
@@ -43,13 +43,13 @@ module.exports = {
             'Notices',
             [
                 {
-                    companies_id: company_ids[0][0].id,
+                    company_id: company_ids[0][0].id,
                     hiring_incentive: '1000000',
                     hiring_position: 'Korea',
-                    hiring_details: 'Pangyo',
+                    hiring_detail: 'Pangyo',
                     required_stack: 'admin@backend_conpany.com',
-                    created_at: new Date(),
-                    updated_at: new Date(),
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
                 },
             ],
             {}

@@ -10,9 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             // define association here
             Notice.belongsTo(models.Company, {
-                as: 'companies',
                 foreignKey: 'id',
-                onDelete: 'cascade',
             });
         }
     }
@@ -20,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
         {
             company_id: DataTypes.STRING,
             hiring_position: DataTypes.STRING,
-            hiring_incentive: DataTypes.NUMBER,
-            hiring_details: DataTypes.STRING,
+            hiring_incentive: DataTypes.INTEGER,
+            hiring_detail: DataTypes.STRING,
             required_stack: DataTypes.STRING,
         },
         {
