@@ -17,7 +17,7 @@ module.exports = {
             hiring_incentive: {
                 type: Sequelize.INTEGER,
             },
-            hiring_detail: {
+            hiring_details: {
                 type: Sequelize.STRING,
             },
             required_stack: {

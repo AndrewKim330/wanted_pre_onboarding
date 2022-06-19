@@ -46,7 +46,7 @@ module.exports = {
                     company_id: company_ids[0][0].id,
                     hiring_incentive: '1000000',
                     hiring_position: 'Korea',
-                    hiring_detail: 'Pangyo',
+                    hiring_details: 'Pangyo',
                     required_stack: 'Typescript',
                     createdAt: new Date(),
                     updatedAt: new Date(),

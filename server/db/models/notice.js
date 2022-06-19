@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
             company_id: DataTypes.STRING,
             hiring_position: DataTypes.STRING,
             hiring_incentive: DataTypes.INTEGER,
-            hiring_detail: DataTypes.STRING,
+            hiring_details: DataTypes.STRING,
             required_stack: DataTypes.STRING,
         },
         {
