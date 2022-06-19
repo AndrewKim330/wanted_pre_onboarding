@@ -96,6 +96,14 @@ const showNoticeDetail = async (req, res) => {
     res.status(resObj.status).send({ data: resObj.data, msg: resObj.msg });
 };
 
+const searchFromDB = async (req, res) => {
+    const { search } = req.query;
+    const joinedTable = await sequelize.query(
+        'SELECT * FROM "Companies" LEFT OUTER JOIN "Notices" ON "Notices".company_id = "Companies".id'
+    );
+    console.log(joinedTable);
+};
+
 module.exports = {
     allNotices,
     addSingleNotice,
