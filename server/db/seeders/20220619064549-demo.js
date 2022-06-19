@@ -47,7 +47,7 @@ module.exports = {
                     hiring_incentive: '1000000',
                     hiring_position: 'Korea',
                     hiring_detail: 'Pangyo',
-                    required_stack: 'admin@backend_conpany.com',
+                    required_stack: 'Typescript',
                     createdAt: new Date(),
                     updatedAt: new Date(),
                 },
